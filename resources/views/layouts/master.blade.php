@@ -16,6 +16,7 @@
             <ul class="nav nav-pills">
                 <li role="presentation" {{$page=='main'?'class=active':''}} ><a href="/">Main page</a></li>
                 <li role="presentation" {{$page=='topics'?'class=active':''}}><a href="/topics">Topics</a></li>
+                <li role="presentation" {{$page=='topics'?'class=active':''}}><a href="/topics">Topics</a></li>
             </ul>
         </div>
     </div>
