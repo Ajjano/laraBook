@@ -16,13 +16,14 @@
             <ul class="nav nav-pills">
                 <li role="presentation" {{$page=='main'?'class=active':''}} ><a href="/">Main page</a></li>
                 <li role="presentation" {{$page=='topics'?'class=active':''}}><a href="/topics">Topics</a></li>
-                <li role="presentation" {{$page=='topics'?'class=active':''}}><a href="/topics">Topics</a></li>
+                <li role="presentation" {{$page=='blocks'?'class=active':''}}><a href="{{route('blocks.index')}}">Blocks</a></li>
             </ul>
         </div>
     </div>
     <div class="container">
         <div class="row">
             @yield('content')
+            @yield('edit_content')
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -11,6 +11,15 @@ class Topic extends Model
 //    protected $table='topics'; //в нашем случае это не указывается
     protected $fillable=['name' ];
 
+    public function blocks()
+    {
+        return $this->hasMany(Block::class);
+
+//        return $this->hasMany(Block::class,
+//        'topic_id',
+//            'id');
+    }
+
     public static function add($fields){
         $topic=new Topic();//new self //new static;
         $topic->fill($fields);

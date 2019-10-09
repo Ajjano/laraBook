@@ -18,7 +18,6 @@
     </div>
     <div class="col-md-6">
        @include('errors')
-
         @include('_message')
     </div>
 @endsection

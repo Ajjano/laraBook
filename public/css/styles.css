@@ -1,11 +1,12 @@
 .content{
-margin: 100px;
+margin-top: 100px;
 }
 
 
 .btn_remove{
-    display: contents;
     color: red;
+    border: none;
+    background: none;
 }
 
 .option{

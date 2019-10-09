@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Block;
 use App\Topic;
 use Illuminate\Http\Request;
 
-class TopicController extends Controller
+class BlockController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +15,10 @@ class TopicController extends Controller
      */
     public function index()
     {
-       $topics=Topic::all();
-       return view('topic.index',[
-           'topics'=>$topics,
-           'page'=>'topics'
-       ]);
+       return view('block.index',[
+           'blocks'=>Block::all(),
+           'page'=>'blocks',
+    ]);
     }
 
     /**
@@ -28,9 +28,10 @@ class TopicController extends Controller
      */
     public function create()
     {
-        return view('topic.create',[
-            'page'=>'topic'
-        ]);
+        $topics=Topic::all();
+        return view('block.create', ['page'=>'blocks',
+            'topics'=>$topics,
+            ]);
     }
 
     /**
@@ -41,12 +42,7 @@ class TopicController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-           'name'=>'required|unique:topics',
-        ]);
-        $topic=Topic::add($request->all());
-        return redirect()->route('topics.index')
-            ->with('message', 'Luck');
+        //
     }
 
     /**
@@ -68,8 +64,7 @@ class TopicController extends Controller
      */
     public function edit($id)
     {
-        $topic_id=Topic::find($id);
-        return view('topic.edit',['topic_id'=>$topic_id, 'page'=>'edit']);
+        //
     }
 
     /**
@@ -81,15 +76,7 @@ class TopicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name'=>'required|unique:topics',
-        ]);
-        $topic = Topic::find($id);
-        $topic->edit($request->all());/*
-        $topic->name = $request->get('name');
-        $topic->save();*/
-        return redirect()->route('topics.index')
-            ->with('message', 'Changes are successful');
+        //
     }
 
     /**
@@ -100,8 +87,6 @@ class TopicController extends Controller
      */
     public function destroy($id)
     {
-        Topic::find($id)->delete();
-        return redirect()->route('topics.index')
-            ->with('message', 'Delete');
+        //
     }
 }
