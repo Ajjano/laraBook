@@ -13,7 +13,9 @@ class Topic extends Model
 
     public function blocks()
     {
-        return $this->hasMany(Block::class);
+        return $this->hasMany(Block::class,
+            'id',
+            'topic_id');
 
 //        return $this->hasMany(Block::class,
 //        'topic_id',

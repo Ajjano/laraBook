@@ -3,18 +3,22 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Block extends Model
 {
-    protected $fillable=['name'];
+    protected $fillable=['title','content','topic_id'];
 
     public function topic()
     {
-        return $this->hasOne(Block::class);
+        return $this->hasOne(Topic::class,
+            'id',
+            'topic_id');
     }
 
     public static function add($fields){
-        $block=new Topic();//new self //new static;
+        $block=new static;//new self //new static;
         $block->fill($fields);
         //$block->fill([$name, $...]);
         $block->save();
@@ -28,6 +32,7 @@ class Block extends Model
     }
 
     public function remove(){
+        Storage::delete('uploads/'.$this->image_path);
         $this->delete();
 
     }
@@ -37,8 +42,8 @@ class Block extends Model
             return;
         else {
             Storage::delete('uploads/'.$this->image_path);
-            $image_name = str_random(10) . '.' . $image->extension();
-            $image->storeAs('uploads', $image_name);
+            $image_name = Str::random(10) . '.' . $image->extension();
+            $image->storeAs('/uploads', $image_name);
             $this->image_path=$image_name;
             $this->save();
         }

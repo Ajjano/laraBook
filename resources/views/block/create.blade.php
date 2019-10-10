@@ -4,6 +4,7 @@
         {!! Form::open([
         'route'=>'blocks.store',
         'method'=>'post',
+        'files'=>'true',
         ]) !!}
 
         <div class="form-group">
@@ -19,12 +20,12 @@
             <input type="text" value="{{old('title')}}" name="title"  class="form-control" placeholder="enter title">
         </div>
         <div class="form-group">
-            <label for="name">Content</label>
-            <textarea  value="{{old('content')}}" name="content"  class="form-control" placeholder="enter name"></textarea>
+            <label for="content">Content</label>
+            <textarea name="content"  rows="3" class="form-control"></textarea>
         </div>
         <div class="form-group">
-            <label for="image">Image</label>
-            <input type="text" value="{{old('name')}}" name="name"  class="form-control" placeholder="enter name">
+            <label for="image_path">Image</label>
+            <input type="file"  name="image_path"  class="form-control" >
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Save</button>

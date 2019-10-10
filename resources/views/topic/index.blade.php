@@ -24,7 +24,7 @@
                             'route'=>['topics.destroy',$topic->id],
                             'method'=>'delete'
                             ]) !!}
-                            <button type="submit" class="btn_remove btn glyphicon glyphicon-remove"></button>
+                            <button type="submit" class="btn_remove glyphicon glyphicon-remove"></button>
                             {!! Form::close() !!}
                         </td>
                     </tr>

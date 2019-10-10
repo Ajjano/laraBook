@@ -15,12 +15,12 @@
                 @foreach($blocks as $block)
                     <tr>
                         <td>{{$block->id}}</td>
-                        {{--<td>{{$block->topic()->where()->name}}</td>--}}
+                        {{--<td>{{$block->topic()->where('id')->name}}</td>--}}
                         <td>{{$block->topic->name}}</td>
                         <td>{{$block->title}}</td>
                         <td>{{$block->content}}</td>
                         <td>
-                            <img src="{{$block->getImage()}}" alt="pict" class="img-responsive">
+                            <img style="max-width: 200px" src="{{$block->getImage()}}" alt="pict" class="img-responsive">
                         </td>
                         <td class="option">
                             <a href="{{route('blocks.edit', $block->id)}}"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -28,9 +28,8 @@
                             'route'=>['blocks.destroy',$block->id],
                             'method'=>'delete'
                             ]) !!}
-                            <button type="submit" class="btn_remove btn glyphicon glyphicon-remove"></button>
+                            <button type="submit" class="btn_remove glyphicon glyphicon-remove"></button></td>
                             {!! Form::close() !!}
-                        </td>
                     </tr>
                 @endforeach
             </tbody>
