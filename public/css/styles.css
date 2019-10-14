@@ -11,5 +11,20 @@ margin-top: 100px;
 
 .option{
     display: flex;
- //   justify-content: space-around;
+    justify-content: space-around;
+}
+
+.content_block{
+    max-width: 90%;
+    border-radius: 5px;
+    background: rgba(82, 192, 228, 0.09);
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.pict_block{
+    display: block;
+    max-height: 200px;
+    margin: 0 auto;
 }
