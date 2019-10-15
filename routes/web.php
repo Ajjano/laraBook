@@ -15,3 +15,4 @@
 Route::get('/', 'SiteController@index');
 Route::resource('topics', 'TopicController');
 Route::resource('blocks','BlockController');
+Route::get('/{category}','SiteController@index_category')->name('index_cats');

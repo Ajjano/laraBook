@@ -3,10 +3,12 @@
     <div class="content">
         <div class="row">
            <div class="col-md-1">
-                   <ul class="nav nav-pills nav-stacked">
+                   <ul class="nav-pills nav-stacked ul1">
+                       <li><a name="all" {{$cat_page=='all'?'class=active':''}} href="/">All</a></li>
                        @foreach($topics as $topic)
-                       <li><a href="#">{{$topic->name}}</a></li>
+                       <li><a {{$cat_page==$topic->id?'class=active':''}} name="{{$topic->name}}" href="{{route('index_cats', ['category'=>$topic->id])}}">{{$topic->name}}</a></li>
                        @endforeach
+                           {{--{{$category==$topic->name?'class=active':''}}--}}
                    </ul>
            </div>
             <div class="col-md-11">

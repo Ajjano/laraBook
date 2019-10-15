@@ -28,3 +28,34 @@ margin-top: 100px;
     max-height: 200px;
     margin: 0 auto;
 }
+
+a.active1 {
+    color: #fff;
+    text-decoration: none;
+    background: #337ab7;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+li>a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+.ul1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-stacked>li {
+    float: none;
+    margin-bottom: 10px;}
+
+.nav-stacked>li>a.active{
+    background: #337ab7;
+    color: #fff;
+}
+
+

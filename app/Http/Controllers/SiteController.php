@@ -14,10 +14,23 @@ class SiteController extends Controller
         $topics=Topic::all();
         return view('site.index',[
             'page'=>'main',
+            'cat_page'=>'all',
             'blocks'=>$blocks,
             'topics'=>$topics,
         ]);
 
     }
 
+    public function index_category($category_id){
+        $blocks=Block::where('topic_id','=', $category_id)->get();
+        $topics=Topic::all();
+//      dd($blocks);
+        return view('site.index',[
+            'page'=>'main',
+            'cat_page'=>$category_id,
+            'blocks'=>$blocks,
+            'topics'=>$topics,
+        ]);
+//
+    }
 }
